@@ -1,27 +1,24 @@
 package com.humbo.testautomation.stepDefinitions;
 
+import com.humbo.testautomation.helpers.Hooks;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 
-public class startPage {
+public class StartPage {
 
-    static WebDriver driver;
+    private final WebDriver driver;
+
+    public StartPage() {
+        this.driver = Hooks.getDriver();
+    }
 
     @Given("user has navigated to the start page {string}")
     public void user_has_navigated_to_the_start_page(String url) {
-        ChromeOptions options = new ChromeOptions();
-//        options.addArguments("--start-maximized");
-//        options.addArguments("--incognito");
-        options.addArguments("--headless");
-        options.addArguments("--window-size=1920,1080");
-        options.addArguments("--disable-gpu");
-        driver = new ChromeDriver(options);
         driver.get(url);
     }
+
     @Then("user should see correct page title {string}")
     public void user_should_see_correct_page_title(String pageTitle) {
         Assertions.assertEquals(pageTitle, driver.getTitle());
