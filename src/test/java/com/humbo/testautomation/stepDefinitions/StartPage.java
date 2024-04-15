@@ -21,6 +21,7 @@ public class StartPage {
 
     @Then("user should see correct page title {string}")
     public void user_should_see_correct_page_title(String pageTitle) {
+        System.out.println("The title of the page is: "+driver.getTitle());
         Assertions.assertEquals(pageTitle, driver.getTitle());
     }
 }
