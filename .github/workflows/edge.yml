@@ -34,7 +34,7 @@ jobs:
 
       - name: Install Microsoft Edge WebDriver
         run: |
-          wget https://msedgedriver.azureedge.net/121.0.2277.106/edgedriver_linux64.zip
+          wget https://msedgedriver.azureedge.net/123.0.2420.81/edgedriver_linux64.zip
           unzip edgedriver_linux64.zip -d edgedriver_linux64
           cd edgedriver_linux64
           chmod +x msedgedriver
