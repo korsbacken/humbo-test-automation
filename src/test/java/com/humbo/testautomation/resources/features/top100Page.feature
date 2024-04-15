@@ -5,4 +5,4 @@ Feature: Humbo - Find places to visit
     Given user has navigated to the Top 100 page "http://dev.humbo.com/top100"
 
   Scenario: User should see correct page title
-    Then user should see correct page title "Best places to visit in the world 🌎"
+    Then user should see correct page title "Best places to visit in the world 🌎!"
