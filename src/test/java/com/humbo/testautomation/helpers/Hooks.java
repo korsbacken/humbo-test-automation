@@ -21,28 +21,29 @@ public class Hooks {
     public void setup() {
 
 //        EdgeOptions options = new EdgeOptions();
-//        ChromeOptions options = new ChromeOptions();
-        FirefoxOptions options = new FirefoxOptions();
+        ChromeOptions options = new ChromeOptions();
+//        FirefoxOptions options = new FirefoxOptions();
 
 //        options.addArguments("--start-maximized");
 
 //        options.addArguments("--incognito");    //Chrome
 //        options.addArguments("--inPrivate");    //Edge
 
+        options.addArguments("--headless");        
 //        options.addArguments("--headless=new");
 //        options.addArguments("--window-size=1920,1080");
 
 //        options.addArguments("-private");       //Firefox
 //        options.addArguments("-height=1080");   //Firefox
 //        options.addArguments("-width=1920");    //Firefox
-        options.addArguments("-headless");      //Firefox
+//        options.addArguments("-headless");      //Firefox
 
 //        options.addArguments("--no-sandbox");
 //        options.addArguments("--disable-dev-shm-usage");
 //        options.addArguments("--disable-gpu");
 
-//        driver = new ChromeDriver(options);
-        driver = new FirefoxDriver(options);
+        driver = new ChromeDriver(options);
+//        driver = new FirefoxDriver(options);
 //        driver = new EdgeDriver(options);
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
