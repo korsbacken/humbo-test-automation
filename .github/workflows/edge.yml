@@ -32,13 +32,13 @@ jobs:
           distribution: 'adopt'
           cache: maven
 
-      - name: Install ChromeDriver
+      - name: Install Microsoft Edge WebDriver
         run: |
-          wget https://storage.googleapis.com/chrome-for-testing-public/123.0.6312.58/linux64/chromedriver-linux64.zip
-          unzip chromedriver-linux64.zip
-          cd chromedriver-linux64
-          chmod +x chromedriver
-          sudo mv chromedriver /usr/local/bin
+          wget https://msedgedriver.azureedge.net/123.0.2420.97/edgedriver_linux64.zip
+          unzip edgedriver_linux64.zip
+          cd edgedriver_linux64
+          chmod +x msedgedriver
+          sudo mv msedgedriver /usr/local/bin
 
       - name: Build and Test with Maven
-        run: mvn -B clean verify -DskipTests=false -Dwebdriver.chrome.driver=/usr/local/bin/chromedriver
+        run: mvn -B clean verify -DskipTests=false -Dwebdriver.edge.driver=/usr/local/bin/msedgedriver
