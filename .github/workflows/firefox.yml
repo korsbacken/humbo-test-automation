@@ -31,13 +31,12 @@ jobs:
           distribution: 'adopt'
           cache: maven
 
-      - name: Install ChromeDriver
+      - name: Install Geckodriver
         run: |
-          wget https://storage.googleapis.com/chrome-for-testing-public/123.0.6312.58/linux64/chromedriver-linux64.zip
-          unzip chromedriver-linux64.zip
-          cd chromedriver-linux64
-          chmod +x chromedriver
-          sudo mv chromedriver /usr/local/bin
+          wget https://github.com/mozilla/geckodriver/releases/download/v0.34.0/geckodriver-v0.34.0-linux64.tar.gz
+          tar -xvzf geckodriver*      
+          chmod +x geckodriver
+          sudo mv geckodriver /usr/local/bin/
 
       - name: Build and Test with Maven
-        run: mvn -B clean verify -DskipTests=false -Dwebdriver.chrome.driver=/usr/local/bin/chromedriver
+        run: mvn -B clean verify -DskipTests=false -Dwebdriver.gecko.driver=/usr/local/bin/geckodriver
