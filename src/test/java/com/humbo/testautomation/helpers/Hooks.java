@@ -45,15 +45,16 @@ public class Hooks {
         driver = new EdgeDriver(options);
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        System.out.println("Edge browser has opened");
+        System.out.println("Browser has opened");
     }
 
     @After
     public void tearDown() {
         if (driver != null) {
+            System.out.println("Browser is closing");
             driver.quit();
         }
-        System.out.println("Edge browser has closed");
+        System.out.println("Browser has closed");
     }
 
     public static WebDriver getDriver() {
