@@ -19,14 +19,14 @@ public class Hooks {
     @Before
     public void setup() {
 
-        EdgeOptions options = new EdgeOptions();
-//        ChromeOptions options = new ChromeOptions();
+//        EdgeOptions options = new EdgeOptions();
+        ChromeOptions options = new ChromeOptions();
 //        FirefoxOptions options = new FirefoxOptions();
 
 //        options.addArguments("--start-maximized");
 
-//        options.addArguments("--incognito");    //Chrome
-        options.addArguments("--inPrivate");    //Edge
+        options.addArguments("--incognito");    //Chrome
+//        options.addArguments("--inPrivate");    //Edge
 
         options.addArguments("--headless");
         options.addArguments("--window-size=1920,1080");
@@ -40,9 +40,9 @@ public class Hooks {
 //        options.addArguments("--disable-dev-shm-usage");
 //        options.addArguments("--disable-gpu");
 
-//        driver = new ChromeDriver(options);
+        driver = new ChromeDriver(options);
 //        driver = new FirefoxDriver(options);
-        driver = new EdgeDriver(options);
+//        driver = new EdgeDriver(options);
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
