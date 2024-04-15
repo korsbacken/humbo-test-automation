@@ -9,6 +9,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.time.Duration;
 
@@ -46,6 +47,7 @@ public class Hooks {
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         System.out.println("Browser has opened");
+        System.out.println("Browser Name is : "+((RemoteWebDriver) driver).getCapabilities().getBrowserName().toLowerCase());
     }
 
     @After
