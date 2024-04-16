@@ -18,7 +18,7 @@ public class Hooks {
 
     @Before
     public void setup() throws Exception {
-        String browser = "firefox";
+        String browser = "chrome";
         if (browser.equalsIgnoreCase("chrome")) {
             driver = new ChromeDriver(options.getChromeOptions());
         } else if (browser.equalsIgnoreCase("edge")) {
@@ -32,7 +32,6 @@ public class Hooks {
 //        options.addArguments("--disable-dev-shm-usage");
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        System.out.println("Browser has opened");
         System.out.println("Test has started with browser: " + ((RemoteWebDriver) driver).getCapabilities().getBrowserName().toLowerCase());
     }
 
